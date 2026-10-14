@@ -69,7 +69,7 @@ def main() -> int:
         lines.append("LLM wording runs at temperature 0. Any difference in `reason` text is wording only; "
                      "the verdict and note id are fixed before the model is called.")
     REPORT.parent.mkdir(exist_ok=True)
-    REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print("\n".join(lines))
     return 0 if graded_same else 1
 

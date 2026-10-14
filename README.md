@@ -220,6 +220,27 @@ input and 1,500 output tokens, $0 with Ollama or about $0.012 with claude-haiku-
 $5 per million tokens. A run with `--llm` writes measured token counts from the API responses,
 per call, in the same file.
 
+## How I built it
+
+Tools: Python 3, pandas, numpy and pytest. There are no external services, and the default run
+needs no API key or model download.
+
+1. **Read the inputs before writing logic.** The data has 7 routes with 104 complete weeks each,
+   and 10 notes. Only three of the notes describe a cost increase; the rest say costs were not
+   affected, conditions were normal, or the routes are outside the dataset.
+2. **Pinned the numbers to the sample file first.** I tried the plausible readings of "cost per
+   tonne-km" and "average", and kept only the ones that reproduce all three sample rows: a
+   pooled weekly metric and simple means for both baselines. An average of per-shipment ratios
+   misses the sample values.
+3. **Built in pipeline order, with tests at each step:** preprocessing, then baselines, the flag
+   rule, note matching, reasons, the runner, and finally Q&A. Each module only consumes the
+   previous module's table, so it can be tested on small hand-made frames.
+4. **Chose the flag thresholds from the data.** I looked at how much each route normally moves
+   week to week and how far apart peers normally sit, then checked the result against the
+   sample rows and the hand labels (see "The flag rule" above).
+5. **Kept the model out of the decision path.** Verdicts and note ids come from explicit rules.
+   An LLM can only reword the explanation, and its text is checked before it is used.
+
 ## How I convinced myself it was right
 
 1. **Unit tests** (`python -m pytest`, 121 tests): validation and Monday bucketing edge cases
@@ -247,6 +268,7 @@ per call, in the same file.
 **Reproducibility.** `python evals/reproducibility_check.py` runs `runner.py` three times as
 fresh processes and compares the outputs. Flags, numbers, verdicts and note ids are identical,
 and the files are byte-identical (same SHA-256) because nothing in the default run is random.
+The same check on Windows produced the same hashes as on Linux.
 With `--llm`, the check compares every column except `reason`; temperature is 0, and the
 verdict and note id are fixed before the model is called, so wording cannot move them.
 

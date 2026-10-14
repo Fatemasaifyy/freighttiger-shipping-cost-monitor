@@ -110,7 +110,8 @@ def write_outputs(output: pd.DataFrame, table: pd.DataFrame, token_log: dict, ou
     full["week_of"] = full["week_of"].dt.strftime("%Y-%m-%d")
     full.round(6).to_csv(out_dir / "all_route_weeks.csv", index=False, lineterminator="\n")
 
-    with open(out_dir / "token_log.json", "w", encoding="utf-8") as fh:
+    # newline="\n" keeps every output byte-identical on Windows, macOS and Linux
+    with open(out_dir / "token_log.json", "w", encoding="utf-8", newline="\n") as fh:
         json.dump(token_log, fh, indent=2, sort_keys=True)
         fh.write("\n")
 

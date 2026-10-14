@@ -178,7 +178,7 @@ def main() -> int:
               "", "## Threshold sensitivity (context, not a pass/fail check)", "", threshold_table(table), ""]
 
     REPORT.parent.mkdir(exist_ok=True)
-    REPORT.write_text("\n".join(lines), encoding="utf-8")
+    REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print("\n".join(lines))
     return 1 if any(f for _, f, _ in checks) else 0
 
