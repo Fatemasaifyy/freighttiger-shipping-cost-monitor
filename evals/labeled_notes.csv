@@ -1,0 +1,11 @@
+note_id,expected_effect,expected_window_start,expected_window_end,can_justify
+N001,increase,2025-02-24,2025-03-08,yes
+N002,increase,2025-01-20,2025-01-26,yes
+N003,increase,2025-05-05,2025-06-29,yes
+N004,out_of_scope,2024-03-11,2024-03-17,no
+N005,no_effect,2024-07-29,2024-08-04,no
+N006,informational,2025-07-01,2025-09-30,no
+N007,improvement,2024-05-20,2024-05-26,no
+N008,informational,2025-04-01,2025-06-30,no
+N009,improvement,2025-03-17,2025-03-23,no
+N010,no_effect,2025-10-27,2025-11-02,no

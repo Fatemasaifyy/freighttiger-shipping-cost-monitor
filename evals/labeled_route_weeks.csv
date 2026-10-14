@@ -1,0 +1,24 @@
+route,week_of,expected_flagged,expected_note_id,why
+Delhi-Jaipur,2024-11-11,Yes,,Sample row. No note covers Delhi-Jaipur near November 2024.
+Ahmedabad-Mumbai,2025-01-20,No (justified),N002,Sample row. Festival surcharge note for this corridor and this week.
+Mumbai-Pune,2025-09-15,Yes,,Sample row. N006 says demand was stable with no disruption so it cannot justify a rise.
+Chennai-Bangalore,2025-02-24,No (justified),N001,Inside the flood window Feb 24 to Mar 8 on this route.
+Chennai-Bangalore,2025-03-03,No (justified),N001,Inside the flood window Feb 24 to Mar 8 on this route.
+Chennai-Bangalore,2025-03-10,Yes,,Cost still high but N001 says the disruption ended Mar 8 (strict window). N009 is the next week and says normal.
+Chennai-Bangalore,2025-03-17,Yes,,N009 lands on this week but says the route returned to normal so it cannot justify a rise.
+Chennai-Bangalore,2025-03-24,No,,Cost back in line with history and peers.
+Mumbai-Pune,2025-10-27,Yes,,N010 lands on this week but says costs were absorbed without a rate change.
+Mumbai-Pune,2025-06-23,Yes,,Flagged only for its gap to similar routes. N003 (diesel) applies to all routes so it raises the peers too and cannot explain the gap.
+Mumbai-Pune,2025-12-22,Yes,,Peer gap near +39% at the end of a long unexplained creep. No note covers it.
+Mumbai-Delhi,2024-07-29,No,,N005 says costs were not significantly affected and the numbers agree.
+Delhi-Jaipur,2024-05-20,No,,N007 is about improved roads. Nothing unusual that week.
+Delhi-Jaipur,2024-03-11,No,,N004 toll note is out of scope for this dataset. Nothing unusual that week.
+Kolkata-Bhubaneswar,2025-06-09,No,,N008 says no disruption and the numbers agree.
+Ahmedabad-Mumbai,2025-05-05,No,,Diesel rise of roughly 5-7% (N003) is ordinary movement and below the flag thresholds.
+Chennai-Bangalore,2025-05-05,No,,Diesel rise of roughly 5-7% (N003) is ordinary movement and below the flag thresholds.
+Delhi-Chennai,2025-05-05,No,,Diesel rise of roughly 5-7% (N003) is ordinary movement and below the flag thresholds.
+Delhi-Jaipur,2025-05-05,No,,Diesel rise of roughly 5-7% (N003) is ordinary movement and below the flag thresholds.
+Kolkata-Bhubaneswar,2025-05-05,No,,Diesel rise of roughly 5-7% (N003) is ordinary movement and below the flag thresholds.
+Mumbai-Delhi,2025-05-05,No,,Diesel rise of roughly 5-7% (N003) is ordinary movement and below the flag thresholds.
+Mumbai-Pune,2025-05-05,No,,Diesel rise of roughly 5-7% (N003) is ordinary movement and below the flag thresholds.
+Mumbai-Pune,2024-01-01,No,,First week of data. No history so it cannot be rising.

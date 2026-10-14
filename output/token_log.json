@@ -1,0 +1,27 @@
+{
+  "failed_requests": [],
+  "if_llm_wording_is_enabled": {
+    "cost_usd_with_claude_haiku_4_5": 0.012263,
+    "cost_usd_with_ollama_open_source": 0.0,
+    "llm_calls": 19,
+    "method": "estimate: characters / 4 for input, 80 output tokens per call",
+    "total_input_tokens": 4663,
+    "total_output_tokens": 1520
+  },
+  "per_call": [],
+  "this_run": {
+    "calls_where_llm_text_failed_checks": 0,
+    "estimated_cost_usd": 0.0,
+    "failed_requests": 0,
+    "llm_calls": 0,
+    "model": null,
+    "provider": "none (template)",
+    "rate_usd_per_million_tokens": {
+      "input": 0.0,
+      "output": 0.0
+    },
+    "temperature": null,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  }
+}
